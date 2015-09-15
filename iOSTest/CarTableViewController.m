@@ -7,6 +7,7 @@
 //
 
 #import "CarTableViewController.h"
+#import "CarTableViewCell.h"
 
 @interface CarTableViewController ()
 
@@ -16,12 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _carMakes = @[@"Chevy",@"BMW",@"Toyota",@"Volvo",@"Smart"];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    _carModels = @[@"Volt",@"Mini",@"Venza",@"S60",@"Fortwo"];
+    _carImages = @[@"ionic.png",@"ionic.png",@"ionic.png",@"ionic.png",@"ionic.png"];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,29 +29,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return _carModels.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    CarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"carTableCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    long row = [indexPath row];
+    
+    cell.modelLabel.text = _carModels[row];
+    cell.makeLabel.text = _carMakes[row];
+    cell.carImage.image = [UIImage imageNamed:_carImages[row]];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

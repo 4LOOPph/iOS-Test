@@ -100,20 +100,42 @@
         <!--Car Table View Controller-->
         <scene sceneID="GhJ-kF-9vN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s3i-cF-4me" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="21d-6L-y2f" customClass="CarTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0nk-jf-4qz">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="22" sectionFooterHeight="22" id="0nk-jf-4qz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="carTableCell" id="c8O-6W-mxK" customClass="CarTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="carTableCell" rowHeight="62" id="c8O-6W-mxK" customClass="CarTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c8O-6W-mxK" id="0Jg-nh-wM1">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yx0-Of-uZd">
+                                            <rect key="frame" x="74" y="9" width="217" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEU-73-8Sg">
+                                            <rect key="frame" x="74" y="34" width="217" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DMs-at-mbR">
+                                            <rect key="frame" x="9" y="3" width="58" height="56"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="carImage" destination="DMs-at-mbR" id="g7b-sY-FJg"/>
+                                    <outlet property="makeLabel" destination="yx0-Of-uZd" id="fVL-lg-oW3"/>
+                                    <outlet property="modelLabel" destination="fEU-73-8Sg" id="hig-xZ-2uL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="21d-6L-y2f" id="DOZ-FZ-b9a"/>
                             <outlet property="delegate" destination="21d-6L-y2f" id="gCL-L2-E8x"/>
@@ -121,6 +143,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="p53-ES-meX"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s3i-cF-4me" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="550" y="562"/>
         </scene>
